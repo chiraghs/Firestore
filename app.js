@@ -37,7 +37,7 @@ function renderCafe(doc){
 
 //Real time data base
 
-db.collection('cafes').orderBy('name').onSnapshot(snapshot => {
+db.collection('cafes').orderBy('city').onSnapshot(snapshot => {
     let changes =snapshot.docChanges();
     changes.forEach(change => {
         if(change.type == 'added'){

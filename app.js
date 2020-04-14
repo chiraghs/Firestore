@@ -27,7 +27,7 @@ function renderCafe(doc){
     })
 }
 
-db.collection('cafes').where('city','==','Bangalore').get().then((snapshot) => {
+db.collection('cafes').where('city','<','I').orderBy('city').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         renderCafe(doc);
     })
